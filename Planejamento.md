@@ -37,11 +37,17 @@
 - Fechar a carcaça do carro
 - Verificar a comunicação do ESP via Bluetooth
 
+## Concluído
+
 # Semana 5 - 14/10/2026 a 20/10/2026
 
 - Fazer o carro andar via Bluetooth
 - Demonstrar ao nosso orientador
 
+## Concluído
+
 # Semana 6 - 21/10/2026 a 27/10/2026
 
 - Otimização do carro
+
+# Em andamento
