@@ -17,3 +17,165 @@ Professor Técnico: Arlindo Ricarte
 ## 1. Objetivo do projeto
 
 Desenvolver um veículo terrestre em pequena escala para participação na Competição de Carrinhos do Projeto Integrador. O veículo deverá percorrer a pista definida pela organização, respeitando os requisitos do regulamento e utilizando a interface de controle disponibilizada.
+## 2. Conceito da solução
+
+Descrever, de forma objetiva, a solução escolhida pela equipe.
+
+Exemplo:
+
+- arquitetura de tração: diferencial com dois motores;
+- direção: volante disponibilizado pelos orientadores.___________________;
+- controlador principal: ____________________;
+- driver de motores: ____________________;
+- câmera embarcada: celular____________________;
+- estratégia de alimentação: ____________________;
+- sensores adicionais, se houver: ____________________;
+- recursos de automação, se houver: ____________________.
+
+---
+
+## 3. Arquitetura geral
+
+Inserir aqui um diagrama da arquitetura do sistema ou um link para o arquivo correspondente em `docs/arquitetura/`.
+
+Exemplo de organização:
+
+```text
+Volante da organização
+        |
+        | UDP
+        v
+      ESP32
+        |
+        +--> controle dos motores
+        +--> sensores
+        +--> atuadores
+        |
+        +--> MQTT --> telemetria
+
+Celular embarcado --> transmissão de vídeo
+```
+
+### Subsistemas
+
+- **Mecânica:** descrever resumidamente.
+- **Eletrônica:** descrever resumidamente.
+- **Software:** descrever resumidamente.
+- **Comunicação:** descrever resumidamente.
+- **Alimentação:** descrever resumidamente.
+
+---
+
+## 4. Estado atual do desenvolvimento
+Carro andando de forma independente via Bluetooth.
+
+### Concluído
+
+- [ ] Definição da arquitetura geral
+- [ ] Projeto mecânico inicial
+- [ ] Diagrama elétrico inicial
+- [ ] Comunicação com o sistema da organização
+- [ ] Controle dos motores em bancada
+- [ ] Integração mecânica
+- [ ] Integração eletroeletrônica
+- [ ] Teste do veículo em movimento
+- [ ] Integração da câmera
+- [ ] Outros: ____________________
+
+### Em desenvolvimento
+
+Descrever as atividades em andamento.
+
+### Pendências principais
+
+Descrever os principais pontos ainda não resolvidos.
+
+---
+
+## 5. Planejamento
+
+O planejamento semanal da equipe está disponível em:
+
+[`PLANEJAMENTO.md`](PLANEJAMENTO.md)
+
+O registro semanal de atividades está disponível em:
+
+[`PROGRESSO.md`](PROGRESSO.md)
+
+---
+
+## 6. Documentação técnica
+
+Organizar a documentação técnica, preferencialmente, nas seguintes pastas:
+
+```text
+docs/
+├── arquitetura/
+├── mecanica/
+├── eletronica/
+├── software/
+└── testes/
+```
+
+### Documentos disponíveis
+
+- Arquitetura geral: ____________________
+- Projeto mecânico: ____________________
+- Diagrama elétrico: ____________________
+- Documentação do software: ____________________
+- Lista de materiais: ____________________
+- Registros de testes: ____________________
+
+---
+
+## 7. Materiais e componentes
+
+ESP 32
+Ponte H
+Baterias
+
+---
+
+## 8. Comunicação com a organização
+
+### Comandos
+
+- Protocolo: UDP unicast
+- Porta: 5000
+- Formato: JSON em UTF-8
+- Frequência nominal: 60 Hz
+
+Formato esperado:
+
+```json
+{
+  "sequencia": 123,
+  "volante": 0,
+  "aceleracao": 0,
+  "habilitado": true
+}
+```
+
+### Telemetria
+
+- Protocolo: MQTT 3.1.1 sobre TCP
+- Porta: 1883
+- Tópico previsto: `carrinhos/<equipe>/telemetria`
+
+Os campos definitivos de telemetria serão definidos pela equipe em conjunto com os professores.
+
+---
+
+## 9. Testes realizados
+
+Registrar os testes relevantes do projeto. Para registros mais detalhados, utilizar `docs/testes/`.
+
+| Data | Teste | Resultado | Próxima ação |
+|---|---|---|---|
+| __/__/2026 | ____________________ | ____________________ | ____________________ |
+
+---
+
+## 10. Observações
+
+Registrar aqui informações importantes que não se encaixem nas demais seções.
