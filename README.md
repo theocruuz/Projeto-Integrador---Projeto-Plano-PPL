@@ -36,33 +36,15 @@ Exemplo:
 
 ## 3. Arquitetura geral
 
-Inserir aqui um diagrama da arquitetura do sistema ou um link para o arquivo correspondente em `docs/arquitetura/`.
 
-Exemplo de organização:
-
-```text
-Volante da organização
-        |
-        | UDP
-        v
-      ESP32
-        |
-        +--> controle dos motores
-        +--> sensores
-        +--> atuadores
-        |
-        +--> MQTT --> telemetria
-
-Celular embarcado --> transmissão de vídeo
-```
 
 ### Subsistemas
 
-- **Mecânica:** descrever resumidamente.
-- **Eletrônica:** descrever resumidamente.
-- **Software:** descrever resumidamente.
-- **Comunicação:** descrever resumidamente.
-- **Alimentação:** descrever resumidamente.
+- **Mecânica:** Chassi terceirizado.
+- **Eletrônica:** Circuito PWM.
+- **Software:** Código integrado no ESP.
+- **Comunicação:** via Wifi.
+- **Alimentação:** Baterias.
 
 ---
 
@@ -71,24 +53,19 @@ Carro andando de forma independente via Bluetooth.
 
 ### Concluído
 
-- [ ] Definição da arquitetura geral
+- [X] Definição da arquitetura geral
 - [ ] Projeto mecânico inicial
 - [ ] Diagrama elétrico inicial
 - [ ] Comunicação com o sistema da organização
-- [ ] Controle dos motores em bancada
-- [ ] Integração mecânica
-- [ ] Integração eletroeletrônica
-- [ ] Teste do veículo em movimento
+- [X] Controle dos motores em bancada
+- [X] Integração eletroeletrônica
+- [X] Teste do veículo em movimento
 - [ ] Integração da câmera
 - [ ] Outros: ____________________
 
 ### Em desenvolvimento
 
-Descrever as atividades em andamento.
-
-### Pendências principais
-
-Descrever os principais pontos ainda não resolvidos.
+Otimização do carro.
 
 ---
 
@@ -137,34 +114,6 @@ Baterias
 ---
 
 ## 8. Comunicação com a organização
-
-### Comandos
-
-- Protocolo: UDP unicast
-- Porta: 5000
-- Formato: JSON em UTF-8
-- Frequência nominal: 60 Hz
-
-Formato esperado:
-
-```json
-{
-  "sequencia": 123,
-  "volante": 0,
-  "aceleracao": 0,
-  "habilitado": true
-}
-```
-
-### Telemetria
-
-- Protocolo: MQTT 3.1.1 sobre TCP
-- Porta: 1883
-- Tópico previsto: `carrinhos/<equipe>/telemetria`
-
-Os campos definitivos de telemetria serão definidos pela equipe em conjunto com os professores.
-
----
 
 ## 9. Testes realizados
 
