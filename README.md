@@ -109,7 +109,7 @@ docs/
 
 ESP 32
 Ponte H
-Baterias
+Baterias.
 
 ---
 
